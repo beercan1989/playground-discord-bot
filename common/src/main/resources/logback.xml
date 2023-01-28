@@ -6,7 +6,7 @@
         </encoder>
     </appender>
 
-    <logger name="uk.co.baconi" level="DEBUG"/>
+    <logger name="uk.co.baconi" level="${LOGGING_LEVEL:-DEBUG}"/>
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>

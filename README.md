@@ -6,9 +6,21 @@ Playing around with what can be done with/for discord bots.
 For things like secrets, these are managed via environment variables set when the run command is used.
 
 These can be managed within say IntelliJ IDEA by using the EnvFile plugin and a `.env` file in the root of the project.
+
+### Required (to start application)
 ```
+# The application id for the Discord application you want to run this under.
+APPLICATION_ID=123
+
 # The bot token for the Discord application you want to run this under.
 TOKEN=abc-123
+```
+
+### Optional
+```
+# Used to toggle the application logging, enable trace to see all events recieved. 
+# Default: DEBUG
+LOGGING_LEVEL=TRACE
 ```
 
 ## Discord permissions required
