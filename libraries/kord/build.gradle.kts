@@ -5,6 +5,7 @@ plugins {
 
 dependencies {
     implementation(project(":common"))
+    implementation("dev.kord:kord-core:0.8.0-M17")
 }
 
 application {
