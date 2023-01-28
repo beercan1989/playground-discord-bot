@@ -2,6 +2,25 @@
 
 Playing around with what can be done with/for discord bots.
 
+## Project configuration
+For things like secrets, these are managed via environment variables set when the run command is used.
+
+These can be managed within say IntelliJ IDEA by using the EnvFile plugin and a `.env` file in the root of the project.
+```
+# The bot token for the Discord application you want to run this under.
+TOKEN=abc-123
+```
+
+## Discord permissions required
+### Privileged Gateway Intents:
+* Message Content Intent
+
+### General Permissions:
+* Read Messages / View Channels
+
+### Text Permissions:
+* Send Messages
+
 ## So what am I doing?
 
 Probably just having a quick look at the various libraries, to see how they feel.

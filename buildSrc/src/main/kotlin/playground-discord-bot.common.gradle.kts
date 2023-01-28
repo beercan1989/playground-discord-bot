@@ -22,6 +22,9 @@ dependencies {
     // Logging
     implementation("ch.qos.logback:logback-classic:1.4.5")
 
+    // Configuration
+    implementation("com.typesafe:config:1.4.2")
+
     // Test definitions and running
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
 
