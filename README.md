@@ -73,4 +73,4 @@ See [libraries/javacord/README.md](libraries/javacord/README.md) for more
 JDA strives to provide a clean and full wrapping of the Discord REST api and its Websocket-Events for Java. This library is a helpful tool that provides the functionality to create a discord bot in java.
 * https://github.com/DV8FromTheWorld/JDA
 
-See [libraries/javacord/README.md](libraries/javacord/README.md) for more
+See [libraries/jda/README.md](libraries/jda/README.md) for more
