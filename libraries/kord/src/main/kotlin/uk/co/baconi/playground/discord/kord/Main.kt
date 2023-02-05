@@ -1,10 +1,13 @@
 package uk.co.baconi.playground.discord.kord
 
 import dev.kord.core.Kord
+import dev.kord.core.behavior.interaction.respondPublic
+import dev.kord.core.behavior.reply
 import dev.kord.core.event.Event
 import dev.kord.core.event.gateway.DisconnectEvent
 import dev.kord.core.event.gateway.ReadyEvent
 import dev.kord.core.event.guild.GuildCreateEvent
+import dev.kord.core.event.interaction.ChatInputCommandInteractionCreateEvent
 import dev.kord.core.event.message.MessageCreateEvent
 import dev.kord.core.on
 import dev.kord.gateway.Intent
@@ -27,12 +30,22 @@ suspend fun main() {
             message.author?.isBot != false -> return@on
             message.content.startsWith("!ping") -> {
                 logger.debug("Received ping via shortcut")
-                message.channel.createMessage("pong!")
+                message.reply { content = "pong!" }
             }
             message.content.startsWith("${config.applicationMention} ping") -> {
                 logger.debug("Received ping via mention")
-                message.channel.createMessage("pong!")
+                message.reply { content = "pong!" }
             }
+        }
+    }
+
+    kord.createGlobalChatInputCommand("ping", "Its just a bit of Ping, Pong!")
+
+    kord.on<ChatInputCommandInteractionCreateEvent> {
+        when {
+            interaction.user.isBot -> return@on
+            interaction.command.rootName != "ping" -> return@on
+            else -> interaction.respondPublic { content = "pong!" }
         }
     }
 
